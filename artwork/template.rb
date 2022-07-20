@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'ascii_to_svg'
 
 # Width of one character in pixels
@@ -16,8 +14,6 @@ image_content = '\ / x - | o + # ' +
                 '+--+ +--- |  | o'
 # Number of characters per line
 line_length = 16
-# Image file name
-image_name = 'template'
 
 # AVAILABLE IMAGE OPTIONS
 options = {
@@ -76,4 +72,4 @@ options = {
 # Generate SVG
 svg = AsciiToSvg.from_string(image_content, line_length, options)
 # Write generated SVG to a file
-File.open(image_name + '.svg', 'w') { | f | f.write(svg) }
+File.open(File.basename(__FILE__, '.rb') + '.svg', 'w') { | f | f.write(svg) }
