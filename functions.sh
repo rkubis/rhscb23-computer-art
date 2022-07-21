@@ -23,32 +23,12 @@ function openurl() {
 
 # Open page with Textorizer online tool
 function textorizer() {
-    # Search for firefox command
-    firefox_cmd=$(which firefox 2>/dev/null)
-
-    # Check if firefox command exists
-    if [ -z "$firefox_cmd" ]; then
-        # Print tool URL if firefox is not present
-        echo "Please go to $COMPUTER_ART_TEXTORIZER_URL"
-    else
-        # Open tool URL in firefox if available
-        firefox $COMPUTER_ART_TEXTORIZER_URL
-    fi
+    openurl $COMPUTER_ART_TEXTORIZER_URL
 }
 
 # Open page with Jackson Pollock online tool
 function pollock() {
-    # Search for firefox command
-    firefox_cmd=$(which firefox 2>/dev/null)
-
-    # Check if firefox command exists
-    if [ -z "$firefox_cmd" ]; then
-        # Print tool URL if firefox is not present
-        echo "Please go to $COMPUTER_ART_POLLOCK_URL"
-    else
-        # Open tool URL in firefox if available
-        firefox $COMPUTER_ART_POLLOCK_URL
-    fi
+    openurl $COMPUTER_ART_POLLOCK_URL
 }
 
 # Setup environment for class
@@ -59,17 +39,7 @@ function setup() {
 
 # Open page with ASCII to SVG project
 function manual() {
-    # Search for firefox command
-    firefox_cmd=$(which firefox 2>/dev/null)
-
-    # Check if firefox command exists
-    if [ -z "$firefox_cmd" ]; then
-        # Print project URL if firefox is not present
-        echo "Please go to $COMPUTER_ART_PROJECT_URL"
-    else
-        # Open project URL in firefox if available
-        firefox $COMPUTER_ART_PROJECT_URL
-    fi
+   openurl $COMPUTER_ART_PROJECT_URL
 }
 
 # Upload a file to the server
@@ -163,6 +133,8 @@ function svgclean() {
 
 # Remove all defined functions from terminal
 function unsource() {
+    # Remove openurl function
+    unset openurl
     # Remove textorizer function
     unset textorizer
     # Remove pollock function
