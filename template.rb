@@ -1,3 +1,4 @@
+# Load ASCII to SVG library
 require 'ascii_to_svg'
 
 # Width of one character in pixels
