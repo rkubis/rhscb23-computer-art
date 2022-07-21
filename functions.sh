@@ -1,7 +1,55 @@
+# Define URL for Textorizer tool
+COMPUTER_ART_TEXTORIZER_URL="https://lapin-bleu.net/software/textorizer/"
+# Define URL for Jackson Pollock tool
+COMPUTER_ART_POLLOCK_URL="http://jacksonpollock.org/"
 # Define the server for uploading files
-COMPUTER_ART_CURL_TARGET=""
+COMPUTER_ART_UPLOAD_URL=""
 # Define URL of ASCII to SVG project
 COMPUTER_ART_PROJECT_URL="https://github.com/a6b8/ascii-to-svg-generator-for-ruby"
+
+function openurl() {
+    # Search for firefox command
+    firefox_cmd=$(which firefox 2>/dev/null)
+
+    # Check if firefox command exists
+    if [ -z "$firefox_cmd" ]; then
+        # Print URL if firefox is not present
+        echo "Please go to $1"
+    else
+        # Open URL in firefox if available
+        firefox $1
+    fi
+}
+
+# Open page with Textorizer online tool
+function textorizer() {
+    # Search for firefox command
+    firefox_cmd=$(which firefox 2>/dev/null)
+
+    # Check if firefox command exists
+    if [ -z "$firefox_cmd" ]; then
+        # Print tool URL if firefox is not present
+        echo "Please go to $COMPUTER_ART_TEXTORIZER_URL"
+    else
+        # Open tool URL in firefox if available
+        firefox $COMPUTER_ART_TEXTORIZER_URL
+    fi
+}
+
+# Open page with Jackson Pollock online tool
+function pollock() {
+    # Search for firefox command
+    firefox_cmd=$(which firefox 2>/dev/null)
+
+    # Check if firefox command exists
+    if [ -z "$firefox_cmd" ]; then
+        # Print tool URL if firefox is not present
+        echo "Please go to $COMPUTER_ART_POLLOCK_URL"
+    else
+        # Open tool URL in firefox if available
+        firefox $COMPUTER_ART_POLLOCK_URL
+    fi
+}
 
 # Setup environment for class
 function setup() {
@@ -62,7 +110,7 @@ function upload() {
         # Log info about uploading
         echo "Uploading the file '$1' to the server as '$target_name'..."
         # Upload file
-        curl -X POST -H "Content-Type: multipart/form-data" -F "image=@$1" -F "name=$target_name" $COMPUTER_ART_CURL_TARGET
+        curl -X POST -H "Content-Type: multipart/form-data" -F "image=@$1" -F "name=$target_name" $COMPUTER_ART_UPLOAD_URL
     else
         # Log error if specified file does not exist
         >&2 echo "The file '$1' does not exist."
@@ -115,6 +163,10 @@ function svgclean() {
 
 # Remove all defined functions from terminal
 function unsource() {
+    # Remove textorizer function
+    unset textorizer
+    # Remove pollock function
+    unset pollock
     # Remove setup function
     unset setup
     # Remove manual function
