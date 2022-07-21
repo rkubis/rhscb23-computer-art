@@ -131,7 +131,7 @@ function run() {
 }
 
 # Force removal of SVG files in the current directory
-function svgclean() {
+function cleanup() {
     # Log info about cleaning
     echo "Cleaning SVG files in the current directory..."
     # Force remove all SVG files in the current directory
@@ -156,8 +156,8 @@ function unsource() {
     unset upload
     # Remove run function
     unset run
-    # Remove svgclean function
-    unset svgclean
+    # Remove cleanup function
+    unset cleanup
     # Remove unsource function
     unset unsource
 }
