@@ -4,8 +4,15 @@ require 'ascii_to_svg'
 # Width of one character in pixels
 CHAR_WIDTH = 31
 
-# IMAGE DEFINITION
-# Content of image (16 characters per line)
+############################################################
+# IMAGE DEFINITION                                         #
+############################################################
+# Generate example String
+# image_content = AsciiToSvg.example_string(['x', 'o'], 256)
+
+# OR
+
+# Define content of image (16 characters per line)
 image_content = '\ / x - | o + # ' +
                 '                ' +
                 '+--+ |    +--+ |' +
@@ -13,8 +20,10 @@ image_content = '\ / x - | o + # ' +
                 '|  | |    +--+ |' +
                 '|  | |    |  | |' +
                 '+--+ +--- |  | o'
+
 # Number of characters per line
 line_length = 16
+############################################################
 
 # AVAILABLE IMAGE OPTIONS
 options = {
