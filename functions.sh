@@ -1,5 +1,28 @@
 # Define the server for uploading files
 COMPUTER_ART_CURL_TARGET=""
+# Define URL of ASCII to SVG project
+COMPUTER_ART_PROJECT_URL="https://github.com/a6b8/ascii-to-svg-generator-for-ruby"
+
+# Setup environment for class
+function setup() {
+    # Install ascii_to_svg gem
+    gem install ascii_to_svg --user-install
+}
+
+# Open page with ASCII to SVG project
+function manual() {
+    # Search for firefox command
+    firefox_cmd=$(which firefox 2>/dev/null)
+
+    # Check if firefox command exists
+    if [ -z "$firefox_cmd" ]; then
+        # Print project URL if firefox is not present
+        echo "Please go to $COMPUTER_ART_PROJECT_URL"
+    else
+        # Open project URL in firefox if available
+        firefox $COMPUTER_ART_PROJECT_URL
+    fi
+}
 
 # Upload a file to the server
 function upload() {
@@ -92,6 +115,10 @@ function svgclean() {
 
 # Remove all defined functions from terminal
 function unsource() {
+    # Remove setup function
+    unset setup
+    # Remove manual function
+    unset manual
     # Remove upload function
     unset upload
     # Remove run function
