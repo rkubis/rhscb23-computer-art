@@ -5,7 +5,7 @@ COMPUTER_ART_ROLLAGE_URL="http://rollage.jhd.cz/"
 # Define URL for Jackson Pollock tool
 COMPUTER_ART_POLLOCK_URL="http://jacksonpollock.org/"
 # Define the server for uploading files
-COMPUTER_ART_UPLOAD_URL="http://radimkubis.cz/rhscb22/gallery/upload.php"
+COMPUTER_ART_UPLOAD_URL="http://radimkubis.cz/rhscb23/gallery/upload.php"
 # Define URL of ASCII to SVG project
 COMPUTER_ART_PROJECT_URL="https://github.com/a6b8/ascii-to-svg-generator-for-ruby"
 
