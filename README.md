@@ -1,2 +1,2 @@
-# rhscb22-computer-art
-Computer Art @ Red Hat Summer Camp Brno 2022
+# rhscb23-computer-art
+Computer Art @ Red Hat Summer Camp Brno 2023
