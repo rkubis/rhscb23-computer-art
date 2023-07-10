@@ -4,6 +4,8 @@ COMPUTER_ART_TEXTORIZER_URL="https://lapin-bleu.net/software/textorizer/"
 COMPUTER_ART_ROLLAGE_URL="http://rollage.jhd.cz/"
 # Define URL for Jackson Pollock tool
 COMPUTER_ART_POLLOCK_URL="http://jacksonpollock.org/"
+# Define URL for Spirograph tool
+COMPUTER_ART_SPIROGRAPH_URL="https://nathanfriend.io/inspiral-web/"
 # Define the server for uploading files
 COMPUTER_ART_UPLOAD_URL="http://radimkubis.cz/rhscb23/gallery/upload.php"
 # Define URL of ASCII to SVG project
@@ -36,6 +38,11 @@ function rollage() {
 # Open page with Jackson Pollock online tool
 function pollock() {
     openurl $COMPUTER_ART_POLLOCK_URL
+}
+
+# Open page with Spirograph online tool
+function spirograph() {
+    openurl $COMPUTER_ART_SPIROGRAPH_URL
 }
 
 # Setup environment for class
